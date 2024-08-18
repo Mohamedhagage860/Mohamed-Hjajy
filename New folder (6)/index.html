@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: linear-gradient(45deg, red 50%, black);
+        height: 100vh;
+    }
+ div{
+    background-image:url(card.png) ;
+    width: 600px;
+    height: 398px;
+    position: relative;
+    margin: 20px auto;
+
+ }
+ img{
+    width: 150px;
+    position: absolute;
+    right: 40px;
+    top: 50px;
+ }
+ input{
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+    padding: 15px;
+    margin: 20px;
+ }
+ input:first-of-type{
+    right: 20px;
+    left: 450px;
+    
+
+ }
+ input:last-of-type{
+    width: 350px;
+ }
+ h3{
+    position: absolute;
+    bottom: 50px;
+    left: 70px;
+    color: #fff;
+ }
+ </style>
+<body>
+    <div>
+
+    <img src="logo.png" id="image1" alt="">
+ 
+    <input type="number" placeholder="CCV" >
+    <input type="text" id="input-number">
+    <h3>Mohamed Hjajy</h3>
+  
+    </div>
+    
+  <script>
+    const inputNumber = document.getElementById('input-number');
+    const displayedImage = document.getElementById('image1');
+
+    inputNumber.addEventListener('input', () => {
+      const enteredNumber = inputNumber.value;
+
+      if (enteredNumber.slice(0,4) === '5100') {
+        displayedImage.src = 'master.png';
+      } else if (enteredNumber === '4147') {
+        displayedImage.src = 'visa.png';
+      } else {
+        displayedImage.src = 'logo.png';
+      }
+    });
+  </script>
+</body>
+</html>
